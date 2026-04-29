@@ -32,7 +32,7 @@ pipeline {
         // Run basic tests
         stage('Test') {
             steps {
-                sh "mvn test -DforkCount=0 -DargLine='-DAPP_URL=${APP_URL}'"
+                sh "mvn test -DforkCount=0"
             }
         }
 
