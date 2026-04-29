@@ -32,7 +32,7 @@ pipeline {
         // Run basic tests
         stage('Test') {
             steps {
-                sh "mvn test -DforkCount=0 -DAPP_URL=${APP_URL}"
+                sh "APP_URL=${APP_URL} mvn test -DforkCount=0"
             }
         }
 
