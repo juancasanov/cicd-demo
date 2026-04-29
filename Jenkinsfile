@@ -7,6 +7,7 @@ pipeline {
         IMAGE_NAME = "cicd-demo"
         IMAGE_TAG = "latest"
         SONAR_TOKEN = credentials('SONAR_AUTH')
+        APP_URL = "https://www.google.com"
     }
 
     tools {
