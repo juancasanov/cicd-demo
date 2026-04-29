@@ -33,7 +33,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo "La URL es: $APP_URL"'
-                sh "mvn test -DforkCount=0"
+                sh "mvn test -DforkCount=1"
             }
         }
 
