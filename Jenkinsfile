@@ -31,7 +31,7 @@ pipeline {
         // Run basic tests
         stage('Test') {
             steps {
-                sh "mvn test"
+                sh "mvn test -DforkCount=0"
             }
         }
 
