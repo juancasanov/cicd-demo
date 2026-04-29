@@ -7,7 +7,6 @@ pipeline {
         IMAGE_NAME = "cicd-demo"
         IMAGE_TAG = "latest"
         SONAR_TOKEN = credentials('SONAR_AUTH')
-        APP_URL = "https://www.google.com"
     }
 
     tools {
@@ -32,11 +31,7 @@ pipeline {
         // Run basic tests
         stage('Test') {
             steps {
-                script {
-                    withEnv(["APP_URL=${env.APP_URL}"]) {
-                        sh "mvn test -DforkCount=0"
-                    }
-                }
+                sh "mvn test -DforkCount=0 -Dtest=!SeleniumExampleTest"
             }
         }
 

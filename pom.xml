@@ -82,12 +82,6 @@
                         <version>2.12</version>
                     </dependency>
                 </dependencies>
-                <configuration>
-                    <environmentVariables>
-                        <!-- Maps the Jenkins env var to the test process -->
-                        <APP_URL>${env.APP_URL}</APP_URL>
-                    </environmentVariables>
-                </configuration>
             </plugin>
             <plugin>
 
