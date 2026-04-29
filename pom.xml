@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>au.com.helderklemp</groupId>
@@ -12,12 +12,12 @@
     <name>cicd-demo</name>
     <description>Demo project for Spring Boot</description>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.1.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.1.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -41,7 +41,7 @@
             <scope>test</scope>
         </dependency>
 
-	<dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.9.0</version>
@@ -50,8 +50,8 @@
 
     </dependencies>
     <build>
-            <plugins>
-                <plugin>
+        <plugins>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.0</version>
@@ -82,14 +82,20 @@
                         <version>2.12</version>
                     </dependency>
                 </dependencies>
+                <configuration>
+                    <environmentVariables>
+                        <!-- Maps the Jenkins env var to the test process -->
+                        <APP_URL>${env.APP_URL}</APP_URL>
+                    </environmentVariables>
+                </configuration>
             </plugin>
             <plugin>
-                
+
                 <groupId>org.sonarsource.scanner.maven</groupId>
-                  <artifactId>sonar-maven-plugin</artifactId>
-                  <version>3.5.0.1254</version>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.5.0.1254</version>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
